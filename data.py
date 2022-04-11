@@ -1,23 +1,57 @@
+from characters import cellar_monster
+
 rooms = {
     'Field': {
-        'north': 'Playground',
-        'south': 'Barn',
-        'west': 'Forest',
+        'directions': {
+            'north': 'Playground',
+            'south': 'Barn',
+            'east': 'Small Town',
+            'west': 'Forest' 
+        },
         'items': [
-            'stick'
+            'big stick'
         ],
-        'description': 'A desolate field full of tall grass'
+        'description': '"A desolate field full of tall grass"'
     },
     'Playground': {
-        'south': 'Field'
+        'directions': {
+            'south': 'Field' 
+        },
+        'description': '"A playground with rusted play equipment"'
     },
     'Barn': {
-        'north': 'Field',
-        'items': [
-            'dog'
-        ]
+        'directions': {
+            'north': 'Field',
+            'south': 'Cellar',
+        },
+        'searchables': {
+            'tractor': [
+                'broken blade'
+            ]
+        },
+        'description': '"A smelly old barn with a broken tractor"'
     },
     'Forest': {
-        'east': 'Field'
+        'directions': {
+            'east': 'Field'
+        },
+        'description': 'An endless sea of trees'
+    },
+    'Cellar': {
+        'directions': {
+            'north': 'Barn'
+        },
+        'npcs': [
+            cellar_monster
+        ],
+        'description': '"As you stand in pure darkness, you hear a low growl"'
+    },
+    'Small Town': {
+        'directions': {
+            'west': 'Field'    
+        },
+        'items': {},
+        'npcs': [],
+        'description': "An abandoned town with a few buildings"
     }
 }
