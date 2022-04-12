@@ -1,4 +1,5 @@
 from characters import cellar_monster
+from items import broken_tractor_blade, big_stick
 
 rooms = {
     'Field': {
@@ -9,7 +10,7 @@ rooms = {
             'west': 'Forest' 
         },
         'items': [
-            'big stick'
+            big_stick
         ],
         'description': '"A desolate field full of tall grass"'
     },
@@ -25,8 +26,8 @@ rooms = {
             'south': 'Cellar',
         },
         'searchables': {
-            'tractor': [
-                'broken blade'
+            'broken tractor': [
+                broken_tractor_blade
             ]
         },
         'description': '"A smelly old barn with a broken tractor"'
